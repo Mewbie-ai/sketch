@@ -1,0 +1,289 @@
+* {
+  transition: all 200ms ease-out;
+}
+
+body{
+  color: #55a;
+  max-width: 1000px;
+  margin: auto;
+  font-family: sniglet, serif;
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
+}
+
+section {
+  position: relative;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 4px 3px #55fe;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+main {
+  position: relative;
+  display: flex;
+}
+
+img {
+  object-fit: scale-down;
+}
+
+canvas {
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: 3px solid #777;
+  box-shadow: 3px 2px 1px #eee;
+}
+
+button, input[type='file'] {
+  border: none;
+  border-bottom: 1px solid #777;
+  border-top: 1px solid #777;
+  background: transparent;
+  padding: 8px;
+}
+
+button:hover {
+  border: 1px solid #777;
+  transform: scale(0.95);
+  border-radius: 5em;
+}
+
+button:active{
+  border: 1px solid #f8b;
+  background: #f8b;
+  border-radius: 5em;
+  color: #eee;
+}
+
+button.active {
+  border: 1px solid #f8b;
+  border-radius: 5em;
+  background: #f8b;
+  color: #eee;
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 50%;
+  background: #fff;
+	border: none;
+}
+
+
+
+
+
+
+label {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+label input{
+  margin: auto 0;
+}
+
+
+/* class */
+.canvas-container {
+  position: relative;
+  margin: auto;
+  margin-top: 15%;
+  width: 80%;
+  height: 500px;
+}
+.bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.canvas {
+  display: grid;
+  grid-template-columns: repeat(16,1fr);
+  grid-template-rows: repeat(16,1fr);
+  width: 500px;
+  height: 500px;
+  border: 3px solid #777;
+  box-shadow: 3px 2px 1px #eee;
+}
+.canvas-slider div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.canvas-slider{
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.canvas-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #55a;
+
+  cursor: pointer;
+}
+.bg {
+  transition: 10s ease-out;
+  position: absolute;
+  top: 0%;
+  left: -20%;
+  width: 120%;
+  height: 100%;
+  background: url(bg_comic2.png) no-repeat center/cover;
+}
+
+.px {
+  transition: none;
+  flex: 1;
+}
+
+.title {
+  font-family: shizuru, serif;
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.3em;
+  color: #eee;
+}
+.tools {
+  display: flex;
+  padding: 3em;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+.parody {
+  font-family: sniglet-800,serif;
+  text-align: center;
+  font-size: 4.5rem;
+  background-image: linear-gradient(0deg, #fae, #f5a, #f5a 99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  padding: 0.1em;
+}
+
+.rainbow {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-image: linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red);
+}
+
+span.h1 {color: #fff;}
+.h1 {
+  font-size: 3rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+/* id */
+
+#ref {
+  max-width: 250px;
+}
+
+#display {
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 3px;
+  left: 3px;
+  position: absolute;
+  background: url(madoka.png) no-repeat center/contain;
+  opacity: 0.75;
+}
+
+#banner {
+  position: absolute;
+  z-index: 2;
+  top: -5px;
+  left: 5%;
+  width: 5em;
+  height: 9em;
+  background: url(banner.png) center no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+/* misc */
+
+footer {
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+  text-align: end;
+  gap: 5px;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+footer img {
+  border-radius: 50%;
+  width: 24px;
+}
+
+@font-face {
+  font-family: shizuru;
+  src: url(Shizuru-Regular.ttf);
+}
+
+@font-face {
+  font-family: sniglet;
+  src: url(Sniglet-Regular.ttf);
+}
+
+@font-face {
+  font-family: sniglet-800;
+  src: url(Sniglet-ExtraBold.ttf);
+}

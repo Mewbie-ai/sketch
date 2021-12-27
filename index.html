@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>
+    <div class="title">etch - a - sketch</div>X
+    <div class="parody">Mahou*Shoujo</div>
+  </h1>
+  <main>
+    <section>
+      <aside class="sidebar">
+        <h2>add reference</h2>
+        <input type="file" name="ref" id="ref" accept="image/png, image/jpeg">
+        <img id="example" src="madoka.png">
+        <div id="reference"></div>
+        <button id="display__btn">display reference</button>
+        <button>button</button>
+        <div>
+          <label for="canvas-slider">
+              <h4>(☞ﾟヮﾟ)☞</h3>
+              <h3 id="canvas-slider-label">16 x 16</h3>
+              <input type="button" value="confirm" id="canvas-slider-confirm">
+            </label>
+            <input type="range" min="1" max="64" name="canvas-slider" class="canvas-slider" id="canvas-slider">
+        </div>
+      </aside>
+    </section>
+    <section style="flex: 1;">
+      <div id="banner">
+        <span class="h1">#1</span>
+      </div>
+      <div class="canvas-container">
+        <div class="canvas" id="canvas">
+        </div>
+        <canvas style="display: none;"></canvas>
+        <div id="display"></div>
+      </div>
+      <div class="tools">
+        <input type="color" value="#773344" id="color-picker">
+        <h2>🎨</h2>
+        <div class="rainbow"></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Made by: <a href="https://github.com/Mewbie-ai">Mewbie <img src="mypic.jpeg"></a></h2>
+  </footer>
+  <div class="bg-container">
+    <div class="bg" id="bg"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
