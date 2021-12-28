@@ -7,7 +7,7 @@ var rainbowColor;
 var rainbowMode = false;
 var sliderValue = 16;
 
-// slider or range
+// slider or range & canvas & color
 
 document.getElementById('canvas-slider').addEventListener('change', function(e){
   sliderValue = e.target.value;
@@ -15,7 +15,10 @@ document.getElementById('canvas-slider').addEventListener('change', function(e){
 })
 
 document.getElementById('canvas-slider-confirm')
-.onclick = () => createBoard(sliderValue)
+.onclick = () => {
+  createBoard(sliderValue)
+  document.getElementById('overlay').style.display = 'none'
+}
 
 
 function createBoard(size) {
@@ -44,7 +47,10 @@ function relisten(pix) {
   });
 }
 document.querySelectorAll('.px').forEach(pix => relisten(pix));
-
+color.addEventListener('click', () => {
+  rainbowMode = false
+  document.getElementById('rainbow').classList.remove('active')
+})
   
 
 // image upload
