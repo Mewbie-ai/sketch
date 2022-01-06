@@ -1,5 +1,5 @@
 const img = document.getElementById('reference')
-const display = document.getElementById('display')
+const display = document.getElementById('display');
 const canvas = document.getElementById('canvas')
 const color = document.getElementById('color-picker');
 const ex = document.getElementById('example')
@@ -20,7 +20,7 @@ document.getElementById('canvas-slider-confirm')
   document.getElementById('overlay').style.display = 'none'
 }
 
-
+ 
 function createBoard(size) {
   let square = size * size;
   canvas.style.gridTemplateColumns = `repeat(${size},1fr)`;
@@ -35,14 +35,16 @@ function createBoard(size) {
   }
 }
 
-
+let mouseHold = false
 function relisten(pix) {
   pix.addEventListener('mouseover', function(e){
     if(rainbowMode == true) {
       rainbowColor = Math.floor(Math.random() * 16777215).toString(16);
-      e.target.style.background = "#" + rainbowColor
+      if(mouseHold == true)
+        e.target.style.background = "#" + rainbowColor
     } else {
-      e.target.style.background = color.value
+      if(mouseHold == true)
+        e.target.style.background = color.value
     }
   });
 }
@@ -108,8 +110,24 @@ document.getElementById('rainbow').addEventListener('click', () => {
   rainbowMode = !rainbowMode
 })
 
+// mousedown mouseup
+
+document.body.addEventListener('mousedown', () => {
+  mouseHold = true
+  console.log('mousedown')
+})
+document.body.addEventListener('mouseup', () => {
+  mouseHold = false
+  console.log('mouseup')
+  
+})
+
 // cloud background
 
 document.body.addEventListener('mousemove', e => {
   document.getElementById('bg').style.left = 'calc(-20% + ' + e.clientX/5 + 'px)';
 })
+
+document.getElementById('cloud').addEventListener('click', () => 
+  document.getElementById('bg').style.left = ''
+)
