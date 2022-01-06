@@ -121,6 +121,8 @@ label input{
   z-index: -1;
 }
 .canvas {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(16,1fr);
   grid-template-rows: repeat(16,1fr);
@@ -249,7 +251,7 @@ span.h1 {color: #fff;}
 
 #banner {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: -5px;
   left: 5%;
   width: 5em;
@@ -260,7 +262,6 @@ span.h1 {color: #fff;}
   align-items: center;
   text-align: center;
 }
-
 
 
 /* misc */

@@ -21,10 +21,10 @@ document.getElementById('canvas-slider-confirm')
 }
 
  
-function createBoard(size) {
-  let square = size * size;
-  canvas.style.gridTemplateColumns = `repeat(${size},1fr)`;
-  canvas.style.gridTemplateRows = `repeat(${size},1fr)`;
+function createBoard(side) {
+  let square = side * side;
+  canvas.style.gridTemplateColumns = `repeat(${side},1fr)`;
+  canvas.style.gridTemplateRows = `repeat(${side},1fr)`;
   canvas.innerHTML = "";
 
   for(let i = 0; i<square;i++){
@@ -47,13 +47,27 @@ function relisten(pix) {
         e.target.style.background = color.value
     }
   });
+  pix.addEventListener('dragover', function(e){
+    if(rainbowMode == true) {
+      rainbowColor = Math.floor(Math.random() * 16777215).toString(16);
+      if(mouseHold == true)
+        e.target.style.background = "#" + rainbowColor
+    } else {
+      if(mouseHold == true)
+        e.target.style.background = color.value
+    }
+  });
 }
 document.querySelectorAll('.px').forEach(pix => relisten(pix));
 color.addEventListener('click', () => {
   rainbowMode = false
   document.getElementById('rainbow').classList.remove('active')
 })
-  
+
+
+// clear
+
+document.getElementById('clear').addEventListener('click', () => createBoard(sliderValue))
 
 // image upload
 
@@ -99,7 +113,7 @@ document.getElementById('hide__btn').addEventListener('click', () => {
 
 // button toggle
 
-document.querySelectorAll('button').forEach(btn => 
+document.querySelectorAll('.toggle').forEach(btn => 
   btn.onclick = () => btn.classList.toggle("active")
 )
   
@@ -114,12 +128,16 @@ document.getElementById('rainbow').addEventListener('click', () => {
 
 document.body.addEventListener('mousedown', () => {
   mouseHold = true
-  console.log('mousedown')
 })
 document.body.addEventListener('mouseup', () => {
   mouseHold = false
-  console.log('mouseup')
-  
+})
+
+document.body.addEventListener('drag', () => {
+  mouseHold = true
+})
+document.body.addEventListener('dragend', () => {
+  mouseHold = false
 })
 
 // cloud background
