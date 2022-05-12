@@ -15,15 +15,8 @@
   <main>
     <section>
       <aside class="sidebar">
-        <h2>reference</h2>
-        <input type="file" name="ref" id="ref" accept="image/png, image/jpeg">
-        <img id="example" src="madoka.png">
-        <div id="reference"></div>
-        <button id="clear">clear/start</button>
-        <button class="toggle" id="display__btn">display</button>
-        <button class="toggle" id="hide__btn">hide</button>
         <div>
-          <h3>adjust canvas quality 👇</h3>
+        <h2>Start</h2>
           <label for="canvas-slider">
               <h4>(☞ﾟヮﾟ)☞</h3>
               <h3 id="canvas-slider-label">16 x 16</h3>
@@ -31,6 +24,13 @@
             </label>
             <input type="range" min="1" max="64" name="canvas-slider" class="canvas-slider" id="canvas-slider">
         </div>
+        <h2>Reference</h2>
+        <input type="file" name="ref" id="ref" accept="image/png, image/jpeg">
+        <img id="example" src="madoka.png">
+        <div id="reference"></div>
+        <button id="clear">clear</button>
+        <button class="toggle" id="display__btn">display</button>
+        <button class="toggle" id="hide__btn">hide</button>
       </aside>
     </section>
     <section style="flex: 1;">
@@ -41,16 +41,18 @@
         <div class="canvas" id="canvas"></div>
         <canvas style="display: none;"></canvas>
         <div id="display"></div>
-        <div class="overlay" id="overlay"><h2>adjust canvas quality</h2><img src="overlay.png"></div>
+        <div class="overlay" id="overlay"><h2>adjust canvas resolution</h2><img src="overlay.png"></div>
       </div>
       <div class="tools">
+        <h2>Tools</h2>
         <input type="color" id="color-picker">
         <button class="toggle rainbow" id="rainbow"></button>
+        <button class="toggle" id="eraser">eraser</button>
       </div>
     </section>
   </main>
   <footer>
-    <button class="toggle" id="cloud">☁</button> 
+    <button class="toggle active" id="cloud">☁</button> 
     <p>Made by: <a href="https://github.com/Mewbie-ai">Mewbie <img src="mypic.jpeg"></a></h2>
   </footer>
   <div class="bg-container">
